@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="" />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      top: 0;
+    }
+
+    body {
+      height: 100vh;
+      background: url(../img/1.jpg) no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      width: 350px;
+      height: 400px;
+      border-top: 1px solid rgba(255, 255, 255, 0.5);
+      border-left: 1px solid rgba(255, 255, 255, 0.5);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      border-right: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(1px);
+      background: rgba(50, 50, 50, 0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 6px;
+    }
+
+    .box > h2 {
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 30px;
+    }
+
+    .box .input-box {
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+
+    .box .input-box label {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 5px;
+    }
+
+    .box .input-box input {
+      letter-spacing: 1px;
+      font-size: 14px;
+      box-sizing: border-box;
+      width: 250px;
+      height: 35px;
+      border-radius: 5px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(50, 50, 50, 0.3);
+      outline: none;
+      padding: 0 12px;
+      color: rgba(255, 255, 255, 0.9);
+      transition: 0.2s;
+    }
+    .btn-box1 .denglu2 {
+      margin-left: 9px;
+    }
+
+    /* 输入框聚焦效果 */
+    .box .input-box input:focus {
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .box .btn-box {
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .box .btn-box > a {
+      outline: none;
+      display: block;
+      width: 250px;
+      text-align: end;
+      text-decoration: none;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .box .btn-box > div {
+      margin-top: 2px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box .btn-box > div > button {
+      outline: none;
+      margin-top: 10px;
+      display: block;
+      font-size: 14px;
+      border-radius: 5px;
+      transition: 0.2s;
+    }
+
+    .box .btn-box > div > button:nth-of-type(1) {
+      width: 120px;
+      height: 35px;
+      color: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(00, 96, 96, 0.7);
+      background: rgba(00, 96, 96, 0.5);
+    }
+
+    .box .btn-box > div > button:nth-of-type(2) {
+      width: 120px;
+      height: 35px;
+      margin-left: 10px;
+      color: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(00, 96, 96, 0.7);
+      background: rgba(00, 96, 96, 0.5);
+    }
+
+    .box .btn-box > div > button:hover {
+      border: 1px solid rgba(00, 96, 96);
+      background: rgba(00, 96, 96);
+    }
+    /* 新增样式，实现验证码框占一侧，旁边有发送验证码按钮 */
+    .verification-box {
+      display: flex;
+      align-items: center;
+    }
+
+    .verification-code {
+      flex: 1;
+      width: 70%; /* 设置验证码框的宽度 */
+      margin-right: 10px; /* 设置验证码框与按钮之间的间距 */
+    }
+
+    .send-verification-button {
+      letter-spacing: 1px;
+      font-size: 14px;
+      box-sizing: border-box;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(50, 50, 50, 0.3);
+      outline: none;
+      padding: 0 12px;
+      color: rgba(255, 255, 255, 0.9);
+      transition: 0.2s;
+      width: 60%; /* 设置按钮的宽度 */
+    }
+  </style>
+
+  <body>
+    <!-- 找回密码 -->
+    <div class="div2">
+      <div class="box">
+        <h2>找回密码</h2>
+        <div class="input-box">
+          <label>账号</label>
+          <input type="text" />
+        </div>
+        <div class="input-box">
+          <label>密码</label>
+          <input type="password" class="pwd" />
+        </div>
+        <div class="input-box">
+          <label>验证码</label>
+          <input type="text" />
+          <button class="send-verification-button" onclick="showVerificationCode()">发送验证码</button>
+        </div>
+        <div class="btn-box">
+          <div>
+            <button class="denglu">找回密码</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  //警告框显示验证码+验证码倒计时
+  function showVerificationCode() {
+    var button = document.querySelector('.send-verification-button');
+    var originalButtonText = button.innerText; // 获取按钮文本
+    button.disabled = true; // 禁用按钮
+    var verificationCode = Math.floor(1000 + Math.random() * 9000);
+    // 倒计时60秒
+    var seconds = 5;
+    var countdown = setInterval(function () {
+      // 修改按钮文本
+      button.innerText = '重新发送（' + seconds + 's）';
+      seconds--;
+
+      if (seconds < 0) {
+        clearInterval(countdown);
+
+        // 启用按钮
+        button.disabled = false;
+        // 恢复按钮文本
+        button.innerText = '再次发送';
+      }
+    }, 1000);
+
+    function showAlert(message) {
+      alert(message);
+    }
+    showAlert('验证码：' + verificationCode);
+  }
+</script>

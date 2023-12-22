@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+namespace属性要指定dao接口的全限定名(从包名到类名)
+    -->
+
+<mapper namespace="org.qf.dao.StudentDao">
+
+    <!--增加
+      id：对应接口中的方法名称
+      parameterType:传入的参数，当传入的参数是基本数据类型(int double String等)不需要写，但是当传入的是对象就必须写
+      写全限定名(从包名到类名)
+    -->
+    <insert id="addStu" parameterType="org.qf.entity.Student">
+        insert into stu_students(stu_num,stu_name,stu_gender,stu_age)values(#{stuNum},#{stuName},#{stuGender},#{stuAge})
+    </insert>
+
+    <!--
+      查询：当实体类的属性名与数据库的字段名一致时，直接使用resultType
+            当实体类 的属性名与数据库的字段名不一致时，使用resultMap
+    -->
+    <resultMap id="maps" type="org.qf.entity.Student">
+        <!--
+                id:代表是主键列
+                property：实体类的属性 名
+                column： 数据库的字段名
+        -->
+        <id property="sid" column="sid"></id>
+        <result property="stuNum" column="stu_num"></result>
+        <result property="stuName" column="stu_name"></result>
+        <result property="stuGender" column="stu_gender"></result>
+        <result property="stuAge" column="stu_age"></result>
+    </resultMap>
+
+
+    <select id="showList" resultMap="maps">
+        select * from stu_students where stu_name like concat('%',#{stuName},'%')
+    </select>
+
+    <delete id="deleteStu" >
+        delete from stu_students where sid=#{sid}
+    </delete>
+
+    <update id="updateStu" parameterType="org.qf.entity.Student">
+        update stu_students set stu_name=#{stuName},stu_gender=#{stuGender} where sid=#{sid}
+    </update>
+
+    <select id="searchStu" resultMap="maps">
+            select * from stu_students where stu_name=#{name} and stu_age=#{age}
+    </select>
+
+    <select id="vagueSearchStu" resultMap="maps">
+            select * from stu_students where stu_name like concat('%',#{stuName},'%')
+    </select>
+
+    <select id="PageStu" resultMap="maps">
+        select * from stu_students
+    </select>
+</mapper>

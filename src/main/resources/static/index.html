@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        width: 100%;
+        background: url(../img/1.jpg) no-repeat;
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        height: 100vh; /* 使整个页面高度占据视窗高度 */
+        /* background-size: cover;  */
+      }
+      /* 左侧 */
+      .left-box {
+        width: 30%;
+        color: #fff;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .right-box {
+        flex: 1; /* 可变尺寸，占据剩余空间 */
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      /* 右侧logo和菜单 */
+      .logo {
+        margin-bottom: 20px;
+      }
+
+      .logo img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .menu-item {
+        margin-bottom: 10px;
+        margin-left: 60px;
+      }
+      /* 右侧 */
+      .right-box {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      /* 右侧头部和尾标 */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .content {
+        /* background: url(../img/3.jpeg) no-repeat;
+        background-size: cover;  */
+        flex: 1;
+        padding: 20px;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+        padding-top: 13px;
+      }
+
+      .footer {
+        padding: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="left-box">
+      <div class="logo">
+        <img src="../img/whcsxyLogo.png" alt="Logo" />
+      </div>
+      <ul class="menu">
+        <li class="menu-item">课程课表</li>
+        <li class="menu-item">教室课表</li>
+        <li class="menu-item">班级课表</li>
+        <li class="menu-item">教室课表</li>
+        <li class="menu-item">网上评教</li>
+        <li class="menu-item">学生成绩</li>
+      </ul>
+    </div>
+    <div class="right-box">
+      <div class="header">
+        <div>
+          <a href="#" style="margin-left: 90px; font-size: 16px; color: #fff; text-decoration: none">党政教育</a>
+        </div>
+        <div>
+          <a href="loginRegister.html" style="font-size: 16px; color: #fff; text-decoration: none">招生就业</a>
+        </div>
+        <div>
+          <a href="#" style="margin-right: 90px; font-size: 16px; color: #fff; text-decoration: none">国际交流</a>
+        </div>
+      </div>
+      <div class="content">
+        <h4>学校简介</h4>
+        <p>
+          2021年2月21日，经教育部批复，由湖北省教育厅发文（鄂政函〔2021〕3号），武汉科技大学城市学院转设为武汉城市学院。学校现有在校生19827人，37个本科专业，13个专科专业，涵盖经、文、理、工、医、管理、艺术等7大学科门类，已形成以工科为主多学科协调发展的办学特色。学校现有武汉、红安两个校区，武汉校区位于武汉市东湖风景区，坐拥湖光山色，尽享世界级绿道5A级景区秀丽风光，红安校区位于红色革命发源地，举世闻名的将军故里，自然景观优美、生态环境天然。校园占地1763.54亩，校舍建筑面积59.45万平方米，教学生活设施完善。学校建有实验实训室77个，教学实验仪器设备10600.24万元。医学部与武汉大学中南医院共建的“武汉大学中南医院护理学实习实训基地”被授予湖北高校省级实习实训基地；医学部“护理学实验教学示范中心”被授予湖北省重点实验教学示范中心。图书馆拥有纸质图书158.67万册。
+          <br />学校办学定位为应用型本科。秉持“育人为本、质量立校、特色发展、争创一流”的办学理念，专业建设紧贴社会需求，学校融入区域发展。“护理学”、“智能建筑与环境工程优势特色学科”；“护理学”、“计算机科学与技术”、“土木工程”、“工商管理”、“机械设计制造及自动化”、“视觉传达”、“电子商务”7个专业获批为湖北省一流专业建设点；“工商管理”既是省级重点培育专业，又是省级重点（培育）学科。“计算机科学与技术”、“物流管理”、“土木工程”和“护理学”4个专业入选湖北省普通本科高校专业综合改革试点项目；“计算机科学与技术”、“电子商务”、“机械设计制造及其自动化”3个专业获批湖北省高等学校战略性新兴（支柱）产业人才培养计划本科项目。2022年，信息工程学部“新工科背景下计算思维能力贯通式培养模式改革与实践”、医学部“协同育人视角下应用型护理人才培养模式构建与实践”荣获省级教学成果奖。
+          <br />学校高度重视教师队伍建设，着力推进“骨干教师培育计划”等“三大工程”，配套实施“高层次人才引进计划”、“青年教师博士培养计划”等“四大计划”。现有专任教师637人。专任教师中具有硕士及以上学位的544人，具有副高及以上专业技术职称的有200人，其中具有正高级职称的专任教师48人。城建学部“绿色节能环保功能性建筑材料”团队、经济与管理学部“湖北省战略性新兴产业‘龙头引领、群链驱动、星网协同’路径及政策研究”团队、信息工程学部。
+          <br />“基于时空大数据的社会态势感知研究与应用”团队3个团队获批湖北省高等学校优秀中青年科技创新团队；“计算机科学与技术”专业教学团队、“绿色建筑”课程群教学团队、“护理学”专业教学团队和“工商管理”专业教学团队4个教学团队获评为湖北高校省级教学团队。“计算机基础”教学中心、“计算机软件技术”教研室、“基础医学”教研室、“电子商务”教研室4个团队入选为湖北高校省级优秀基层教学组织。
+        </p>
+      </div>
+      <div class="footer">版权方：武汉城市学院</div>
+    </div>
+  </body>
+</html>

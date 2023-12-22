@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+namespace属性要指定dao接口的全限定名(从包名到类名)
+    -->
+<mapper namespace="org.qf.dao.ProductDao">
+
+    <resultMap id="maps" type="org.qf.entity.Product">
+        <!--
+                id:代表是主键列
+                property：实体类的属性 名
+                column： 数据库的字段名
+        -->
+        <id property="product_id" column="product_id"></id>
+        <result property="product_name" column="product_name"></result>
+        <result property="price" column="price"></result>
+        <result property="category" column="category"></result>
+
+    </resultMap>
+
+    <select id="showProduct" resultMap="maps" parameterType="org.qf.entity.Product">
+        select * from product where
+        <if test="product_id != 0">
+            product_id=#{product_id}
+        </if>
+        <if test="product_name != null">
+            product_name=#{product_name}
+        </if>
+        <if test="price != 0">
+            price=#{price}
+        </if>
+        <if test="category != null">
+            price=#{category}
+        </if>
+    </select>
+
+</mapper>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties> </properties>
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
+    <!--
+    在environments中配置数据库的信息
+    数据库可以配置多个
+    在environments标签中可以定义多个environment标签，每个
+    environment标签可以定义一套连接配置
+    -->
+    <environments default="mysql">
+        <!--测试数据库-->
+        <environment id="mysql">
+            <!--事务管理器-->
+<!--            3. MyBatis框架的使用-->
+<!--            案例：学生信息的数据库操作-->
+<!--            3.1 创建数据库表-->
+<!--            3.2 创建实体类-->
+<!--            ORM映射关系，将表映射为具体的实体类，类名一般是表名的首字母-->
+<!--            大写，类中的属性就是表中的字段，一一对应。-->
+            <transactionManager type="JDBC">
+            </transactionManager>
+            <!--数据源-->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url"
+                          value="jdbc:mysql://localhost:3306/whcsxy-top3?characterEncoding=utf8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="mappers/StudentMapper.xml"></mapper>
+<!--        <mapper resource="mappers/UserMapper.xml"></mapper>-->
+        <mapper resource="mappers/ProductMapper.xml"></mapper>
+    </mappers>
+</configuration>
