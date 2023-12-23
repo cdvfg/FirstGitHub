@@ -58,5 +58,10 @@ public interface StudentDao {
      */
     public List<Student> PageStu();
 
+    /**
+     * 通过用户表id查询学生表
+     * @return
+     */
+    Student getStudentByUserId(int userId);
 
 }

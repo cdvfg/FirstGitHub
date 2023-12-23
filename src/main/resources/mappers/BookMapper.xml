@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.qf.dao.BookDao">
+<!--动态添加Sql语句，当满足条件时，放进去，主条件必须要有-->
+    <select id="showBook" resultType="org.qf.entity.Book" parameterType="org.qf.entity.Book">
+        select * from book where
+        <if test="sid != null">
+            sid=#{sid}
+        </if>
+        <if test="price != 0">
+            AND price=#{price}
+        </if>
+        <if test="count != 0">
+            AND count=#{count}
+        </if>
+        <if test="sname != null">
+            AND sname=#{sname}
+        </if>
+    </select>
+
+</mapper>

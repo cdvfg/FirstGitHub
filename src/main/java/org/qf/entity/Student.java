@@ -21,3 +21,44 @@ public class Student {
     private String stuGender;
     private int stuAge;
 }
+//用@data后自动生成的方法
+//public int getSid() {
+//    return sid;
+//}
+//
+//    public void setSid(int sid) {
+//        this.sid = sid;
+//    }
+//
+//    public String getStuNum() {
+//        return stuNum;
+//    }
+//
+//    public void setStuNum(String stuNum) {
+//        this.stuNum = stuNum;
+//    }
+//
+//    public String getStuName() {
+//        return stuName;
+//    }
+//
+//    public void setStuName(String stuName) {
+//        this.stuName = stuName;
+//    }
+//
+//    public String getStuGender() {
+//        return stuGender;
+//    }
+//
+//    public void setStuGender(String stuGender) {
+//        this.stuGender = stuGender;
+//    }
+//
+//    public int getStuAge() {
+//        return stuAge;
+//    }
+//
+//    public void setStuAge(int stuAge) {
+//        this.stuAge = stuAge;
+//    }
+//}

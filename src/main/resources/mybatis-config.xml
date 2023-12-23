@@ -37,6 +37,7 @@
     </environments>
     <mappers>
         <mapper resource="mappers/StudentMapper.xml"></mapper>
+                <mapper resource="mappers/BookMapper.xml"></mapper>
 <!--        <mapper resource="mappers/UserMapper.xml"></mapper>-->
         <mapper resource="mappers/ProductMapper.xml"></mapper>
     </mappers>

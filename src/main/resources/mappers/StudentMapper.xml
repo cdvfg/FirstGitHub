@@ -59,4 +59,16 @@ namespace属性要指定dao接口的全限定名(从包名到类名)
     <select id="PageStu" resultMap="maps">
         select * from stu_students
     </select>
+
+    <select id="getStudentByUserId" resultMap="maps">
+        SELECT s.sid, s.stu_name, s.stu_num, s.stu_gender, s.stu_age
+        FROM stu_students s
+                 JOIN user u ON s.sid = u.id
+        WHERE u.id = #{userId}
+    </select>
+<!--    SELECT s.sid, s.stu_name AS stuName, s.stu_num AS stuNum, s.stu_gender AS stuGender, s.stu_age AS stuAge-->
+<!--    FROM stu_students s-->
+<!--    JOIN user u ON s.sid = u.id-->
+<!--    WHERE u.id = 1;-->
+
 </mapper>
